@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: retail-rs
-  namespace: mahesh-ns
+  namespace: likhitha-ns
   labels:
     app: retail
 spec:
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: retail-container
-          image: maheshnandi/flower-backend:latest
+          image: likhithabhogyam/retail-inventory-app:latest
           ports:
             - containerPort: 3000
  
