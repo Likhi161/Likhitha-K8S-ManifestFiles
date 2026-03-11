@@ -5,19 +5,18 @@ metadata:
   namespace: likhitha-ns
   labels:
     app: retail
-spec:
+spec: # it defines the behaviour of the replicaset
   replicas: 3
-  selector:
+  selector: # it is used to identify the pods that belong to this replicaset
     matchLabels:
-      app: webapp
-  template:
+      app: web
+  template: # it contains pod definition
     metadata:
       labels:
-        app: webapp
-    spec:
+        app: web
+    spec: # it contains container definition
       containers:
         - name: retail-container
           image: likhithabhogyam/retail-inventory-app:latest
           ports:
             - containerPort: 3000
- 
