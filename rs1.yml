@@ -4,16 +4,16 @@ metadata:
   name: retail-rs
   namespace: likhitha-ns
   labels:
-    app: retail
+    app: retail-app
 spec: # it defines the behaviour of the replicaset
   replicas: 3
   selector: # it is used to identify the pods that belong to this replicaset
     matchLabels:
-      app: web
+      app: retail
   template: # it contains pod definition
     metadata:
       labels:
-        app: web
+        app: retail
     spec: # it contains container definition
       containers:
         - name: retail-container
