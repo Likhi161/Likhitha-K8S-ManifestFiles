@@ -4,19 +4,24 @@ metadata:
   name: ey-cart-deployment
   namespace: likhitha-ns
   labels:
-    app: cart
+    app: ey-cart
 spec:
   replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
   selector:
     matchLabels:
-      app: web
+      app: ey-cart
   template:
     metadata:
       labels:
-        app: web
+        app: ey-cart
     spec:
       containers:
-        - name: ui-cart-container
+        - name: ey-cart-container
           image: muralisocial123/flipkart-app-web:v1.1.0
           ports:
             - containerPort: 80
