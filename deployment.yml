@@ -14,11 +14,11 @@ spec:
       maxSurge: 1
   selector:
     matchLabels:
-      app: ey-cart
+      app: web
   template:
     metadata:
       labels:
-        app: ey-cart
+        app: web
     spec:
       containers:
         - name: ey-cart-container
