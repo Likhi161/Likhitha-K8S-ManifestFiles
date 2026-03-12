@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: ui-cart-container
-          image: muralisocial123/ey-cart:v1.1.0
+          image: likhithabhogyam/retail-inventory-app:latest
           ports:
             - containerPort: 3000
