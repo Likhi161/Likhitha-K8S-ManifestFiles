@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fitness-dep
+  namespace: likhitha-ns
+  labels:
+    app: fitness
+spec:
+  replicas: 8
+  strategy:
+    type: RollingUpdate
+    maxUnavailable: 2
+    maxSurge: 2
+  selector:
+    matchLabels:
+      app: fitness-web
+  template:
+    metadata:
+      labels:
+        app: fitness-web
+    spec:
+      containers:
+        - name: fitness-container
+          image: muralisocial123/fitness-app:v1.0.1
+          ports:
+            - containerPort: 3000
