@@ -9,8 +9,9 @@ spec:
   replicas: 8
   strategy:
     type: RollingUpdate
-    maxUnavailable: 2
-    maxSurge: 2
+    rollingUpdate:
+      maxUnavailable: 2
+      maxSurge: 2
   selector:
     matchLabels:
       app: fitness-web
